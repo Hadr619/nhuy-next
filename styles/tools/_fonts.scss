@@ -1,0 +1,13 @@
+// fonts
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400&family=Roboto:ital,wght@0,400;0,500;0,700;1,500&display=swap');
+$cornerstone: 'cornerstoneregular', sans-serif;
+$ptSerif: 'PT Serif', serif;
+$roboto:'Roboto', sans-serif;
+
+@font-face {
+    font-family: 'cornerstoneregular';
+    src: url('../../fonts/cornerstone-webfont.woff2') format('woff2'),
+         url('../../fonts/cornerstone-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
