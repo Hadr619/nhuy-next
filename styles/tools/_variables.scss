@@ -1,8 +1,13 @@
+@use "sass:meta";
 @import "fonts";
 
-$white: #fff;
-$black: #000;
-$aqua: aqua;
+$white:#fff;
+$black: #333;
+$cornflowerBlue:#4B8ECE;
+$rangoonGreen: #0A0B09;
+$mariner:#2475B9;
+$doveGray:#666666;
 
 $defaultFont: $roboto;
 $defaultPx: 16px;
+

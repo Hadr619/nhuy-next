@@ -1,0 +1,77 @@
+@import "tools/variables";
+@import "tools/helpers";
+
+//==============================================
+// MASTHEAD
+//==============================================
+
+// local variables
+$navHeight: 95px;
+
+.masthead{
+    display: flex;
+    align-items: center;
+    height:200px;
+    background-image: url("/background-dev-min.jpeg");
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    @include bp(medium){
+        height:calc(100vh - #{$navHeight});
+    }
+}
+.overlay{
+    display: flex;
+    align-items: center;
+    width:100%;
+    height:100%;
+    background-color:rgba(0,0,0,.30);
+}
+
+
+.container {
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    @include constrain();
+}
+
+.title{
+    font-size: rem(32);
+    font-family: $cornerstone;
+    color:$white;
+    text-shadow: -2px 1px 18px rgba(0,0,0, 1);
+
+    @include bp(medium){
+        font-size: rem(80);
+    }
+}
+
+.subtitle{
+    font-family: $ptSerif;
+    font-size:rem(20);
+    color: $white;
+    text-shadow: -2px 1px 18px rgba(0,0,0, 1);
+
+    @include bp(medium){
+        font-size:rem(50);
+    }
+}
+
+.btn{
+    margin-top:rem(25);
+}
+
+// Internal Pages
+.internal .masthead{
+    display: flex;
+    align-items: center;
+    height:200px;
+    background-image: url('/background-dev-min.jpeg');
+
+    @include bp(medium){
+        height:430px;
+    }
+}

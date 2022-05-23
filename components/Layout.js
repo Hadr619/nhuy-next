@@ -10,7 +10,7 @@ export default function Layout({ children }) {
        </Head>
        <Header />
           { children }
-          <Footer />
+       <Footer />
       </>
     )
   }

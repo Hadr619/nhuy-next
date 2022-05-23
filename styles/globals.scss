@@ -1,9 +1,21 @@
-
+@use "sass:meta";
 @import "tools/reset";
 @import "tools/fonts";
 @import "tools/helpers";
 
+:root{
+    --primaryColor: #{meta.inspect($cornflowerBlue)};
+    --defaultFont: #{meta.inspect($roboto)};
+}
+
 html{
     font-size: $defaultPx;
-    font-family: $roboto;
+    font-family: var(--defaultFont);
+}
+.page{
+    margin-top:80px;
+
+    @include bp(medium){
+        margin-top:0;
+    }
 }

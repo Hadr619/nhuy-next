@@ -9,6 +9,8 @@ export default function Nav() {
 
     const handleNav = () => {
         setOpen(!open)
+        let html = document.getElementsByTagName('html')[0];
+        html.classList.toggle('active');
     }
     return (
         <nav className={clsx(styles.topnav, open ? styles.open : '')}>
@@ -21,9 +23,13 @@ export default function Nav() {
                 <div className={styles.logo}><a className={styles.logoLink} href="/"></a></div>
             </div>
             <ul className={clsx(styles.topnav, open ? styles.active : '')}>
-                <li className={styles.navItem}>
-                    <Link href="/"><a className={styles.link}>Home</a></Link>
+                <li className={styles.navItem}><Link href="/about"><a className={styles.navLink}>About</a></Link></li>
+                <li className={styles.navItem}><Link href="/my-art"><a className={styles.navLink}>My Art</a></Link></li>
+                <li className={clsx(styles.navItem, styles.navHome)}>
+                    <Link href="/"><a className={clsx(styles.navLink, styles.navItemHome)}><span className={styles.navHomeText}>Home</span></a></Link>
                 </li>
+                <li className={styles.navItem}><Link href="/shows"><a className={styles.navLink}>Shows</a></Link></li>
+                <li className={styles.navItem}><Link href="/contact"><a className={styles.navLink}>Contact</a></Link></li>
             </ul>
         </nav>
     )

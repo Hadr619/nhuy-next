@@ -1,0 +1,98 @@
+@import "tools/variables";
+@import "tools/helpers";
+
+//==============================================
+// LATEST ART WORK
+//==============================================
+
+.latestwork{
+    @include bp(medium){
+        min-height:100vh;
+    }
+    padding-top:rem(50);
+    padding-bottom:rem(50);
+
+    @include bp(medium){
+        padding-top:rem(100);
+        padding-bottom:rem(100);
+    }
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @include constrain();
+}
+.header{
+    font-family:var(--defaultFont);
+    font-size:rem(25);
+    color:$doveGray;
+}
+
+.title{
+    font-family:$ptSerif;
+    font-size:rem(35);
+
+    @include bp(medium){
+        font-size:rem(50);
+    }
+    margin-top:10px;
+    color:$rangoonGreen;
+}
+
+.latestGrid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap:25px;
+    width:100%;
+    margin-top:rem(15);
+}
+
+.gridItem{
+    display:flex;
+    flex-direction:column;
+    height:350px;
+    gap: spacing(4,0);
+    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+    @include bp(medium){
+        height:500px;
+    }
+}
+
+.image{
+    width:100%;
+    height:90%;
+    // background-image: url('/potoo.jpeg');
+    background-repeat:no-repeat;
+    background-size:cover;
+    background-position:center center;
+    position: relative;
+    cursor: pointer;
+}
+.link{
+    display:block;
+    width:100%;
+    height:100%;
+    color:$doveGray;
+    text-decoration: none;;
+
+    @include hover(){
+        cursor:pointer;
+    }
+}
+.info{
+    flex:2 0 0%;
+    color:$doveGray;
+    padding: 0 15px;
+
+    @include bp(medium){
+        padding:0;
+    }
+}
+
+.description{
+    @include textoverflow(1);
+}
+

@@ -1,4 +1,23 @@
 @import "variables";
+
+@mixin constrain() {
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left:  auto;
+    @include bp(small) {
+        width: 750px;
+    }
+
+    @include bp(medium) {
+        width: 950px;
+    }
+
+    @include bp(large) {
+        width: 1170px;
+    }
+}
+
 // BREAKPOINTS
 @mixin bp($point) {
     @if $point == large {
@@ -64,4 +83,11 @@ $html-font-size: $defaultPx;
 }
 @function rem($pxValue) {
     @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+@mixin textoverflow($l){
+    display: -webkit-box;
+    -webkit-line-clamp: $l;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }

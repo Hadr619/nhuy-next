@@ -65,6 +65,105 @@
     border-radius:50%;
   }
 
+  .navItem{
+    .navLink{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding:11px 30px;
+        background-color:transparent;
+        border-width:3px;
+        border-style:solid;
+        border-color:transparent;
+        border-radius: 21px;
+        font-size:30px;
+        text-decoration: none;
+        font-family: 'cornerstoneregular';
+        color:$black;
+        transition: all .25s ease-in-out;
+
+        &.active{
+                border-color: #0A0B09;
+                background-color: #BB2224;
+                color:$white;
+        }
+
+        @include bp(medium){
+            font-size:20px;
+        }
+    }
+
+    @include bp(medium){
+        &:not(.navHome){
+            .navLink{
+                &:hover,
+                &:active,
+                &:focus{
+                    border-color: #0A0B09;
+                    background-color: #BB2224;
+                    color:$white;
+                    transition: all .25s ease-in-out;
+    
+                }
+            }
+        }
+    }
+
+    & + .navItem{
+        margin-top:10px;
+
+        @include bp(medium){
+            &:not(.navHome){
+                margin-top:0;
+            }
+        }
+    }
+}
+
+.navHome{
+    display:none;
+    @include bp(medium){
+        display:block;
+        width:150px;
+        height:150px;
+        order:0;
+        border-radius:50%;
+        background-color:$white;
+        box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+        z-index:1;
+
+        &.navItem{
+            margin-top: 95px;
+        }
+    }
+
+    .navItemHome{
+        @include bp(medium){
+            display:block;
+            width: 150px;
+            height:150px;
+            border-radius:50%;
+            background-image:url('/nhuyreid-logo.svg');
+            background-color: $white; 
+            background-repeat:no-repeat;
+            background-size: 70%;
+            background-position: center 15px;
+            transition: background-color .25s ease-in-out;
+    
+    
+            @include hover(){
+                background-color:darken($white, 5);
+            }
+        }
+    
+        .navHomeText{
+            @include bp(medium){
+                display:none;
+            }
+        }
+    }
+
+}
 
 .bars {
     width: 80px;
