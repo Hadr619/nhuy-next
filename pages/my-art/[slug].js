@@ -1,5 +1,7 @@
 import { createClient} from 'contentful';
-
+import Image from "next/image";
+import Link from "next/link";
+import styles from './[slug].module.scss';
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
@@ -47,22 +49,32 @@ const client = createClient({
 
   export default function ArtWork(post) {
       console.log(post.post.fields);
-      const {title, description, metaDescription} = post.post.fields;
+      const {title, description, image, metaDescription} = post.post.fields;
+
       return(
-        <section className="c-pg__section c-pg-section__artwork">
-                <div className="o-cont c-pg-section__container">
-                    <ul className="c-grid_artwork">
-                        <li className="c-grid-artwork--item o-image lazy">
-                            <a className="c-ga-item--link" href="#">
-                                <div className="c-ga-item__info">
-                                    <h3 className="c-ga-item--title">{title}</h3>
-                                    <div className="c-ga-item--description">{description}</div>
-                                </div>
-                            </a>
-                        </li>
-                                {/* <span className="u-none-added">Sorry, but there is currently no artork uploaded. Please check back.</span> */}
-                    </ul>
+        <section className={styles.section}>
+        <div className={styles.container}>
+            <Link href="/my-art"><a className="c-btn--back"><i className="material-icons">keyboard_backspace</i> Back to my art</a></Link>
+            <div className={styles.artworkGrid}>
+              <div className={styles.image}>
+                <Image 
+                  src={`https:${post.post.fields.image.fields.file.url}`}
+                  layout="responsive"
+                  width={image.fields.file.details.image.width}
+                  height={image.fields.file.details.image.height}
+                  className={styles.image}
+                  alt={title}
+                />
+              </div>
+                <div className={styles.info}>
+                    <h3 className={styles.title}>{title}</h3>
+                    <p></p>      
+                    <div className={styles.description}>{description}</div>
+                    <p></p>
+                    <p> editions</p>
                 </div>
-            </section>
+            </div>
+        </div>
+    </section>
       )
   }

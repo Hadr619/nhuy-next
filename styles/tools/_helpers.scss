@@ -91,3 +91,18 @@ $html-font-size: $defaultPx;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
+
+@mixin font($f){
+    @if $f == roboto{
+        font-family:$roboto;
+    }
+    @else if $f == ptserif{
+        font-family:$ptSerif;
+    }
+    @else if $f == cornerstone{
+        font-family:$cornerstone;
+    }
+    @else {
+        @error "Not a font in my aresenal sir";
+    }
+}
