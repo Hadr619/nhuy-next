@@ -18,8 +18,8 @@ export default function LastestCreations({artwork}) {
     {artwork.map(art =>{
         // console.log(art.fields.title)
         return(
-            <Link href={`/artwork/${art.fields.slug}`} key={art.sys.id}>
-            <li>
+            <li key={art.sys.id}>
+            <Link href={`/my-art/${art.fields.slug}`} >
                 <div className={styles.gridItem}> 
                     <div className={styles.image}>
                         <Image 
@@ -39,8 +39,8 @@ export default function LastestCreations({artwork}) {
                     <p>{art.fields.editions}</p>
                     </div>
                 </div>
-            </li>
             </Link>
+            </li>
         )
     })}
 

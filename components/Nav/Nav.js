@@ -1,12 +1,19 @@
 import { useState } from "react";
 import Link from 'next/link';
+import { useRouter } from "next/router";
 import styles from './Nav.module.scss';
 import clsx from 'clsx';
 
 
 export default function Nav() {
     const [open, setOpen] = useState(false);
+    const router = useRouter();
 
+    const pathCheck = (path) => {
+        if(router.pathname == path){
+            return styles.active
+        }
+    }
     const handleNav = () => {
         setOpen(!open)
         let html = document.getElementsByTagName('html')[0];
@@ -23,13 +30,13 @@ export default function Nav() {
                 <div className={styles.logo}><a className={styles.logoLink} href="/"></a></div>
             </div>
             <ul className={clsx(styles.topnav, open ? styles.active : '')}>
-                <li className={styles.navItem}><Link href="/about"><a className={styles.navLink}>About</a></Link></li>
-                <li className={styles.navItem}><Link href="/my-art"><a className={styles.navLink}>My Art</a></Link></li>
+                <li className={clsx(pathCheck('/about'), styles.navItem)}><Link href="/about"><a className={styles.navLink}>About</a></Link></li>
+                <li className={clsx(pathCheck('/my-art'), styles.navItem)}><Link href="/my-art"><a className={styles.navLink}>My Art</a></Link></li>
                 <li className={clsx(styles.navItem, styles.navHome)}>
                     <Link href="/"><a className={clsx(styles.navLink, styles.navItemHome)}><span className={styles.navHomeText}>Home</span></a></Link>
                 </li>
-                <li className={styles.navItem}><Link href="/shows"><a className={styles.navLink}>Shows</a></Link></li>
-                <li className={styles.navItem}><Link href="/contact"><a className={styles.navLink}>Contact</a></Link></li>
+                <li className={clsx(pathCheck('/shows'), styles.navItem)}><Link href="/shows"><a className={styles.navLink}>Shows</a></Link></li>
+                <li className={clsx(pathCheck('/contact'), styles.navItem)}><Link href="/contact"><a className={styles.navLink}>Contact</a></Link></li>
             </ul>
         </nav>
     )

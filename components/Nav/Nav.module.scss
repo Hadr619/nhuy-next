@@ -66,6 +66,13 @@
   }
 
   .navItem{
+    &.active{
+        .navLink{
+            border-color: #0A0B09;
+            background-color: #BB2224;
+            color:$white;
+        }
+    }
     .navLink{
         display: inline-flex;
         justify-content: center;
@@ -82,11 +89,7 @@
         color:$black;
         transition: all .25s ease-in-out;
 
-        &.active{
-                border-color: #0A0B09;
-                background-color: #BB2224;
-                color:$white;
-        }
+
 
         @include bp(medium){
             font-size:20px;
