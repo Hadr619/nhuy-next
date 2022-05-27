@@ -54,7 +54,7 @@ const client = createClient({
       return(
         <section className={styles.section}>
         <div className={styles.container}>
-            <Link href="/my-art"><a className="c-btn--back"><i className="material-icons">keyboard_backspace</i> Back to my art</a></Link>
+            <Link href="/my-art "><a className="c-btn--back"><i className="material-icons">keyboard_backspace</i> Back to my art</a></Link>
             <div className={styles.artworkGrid}>
               <div className={styles.image}>
                 <Image 
