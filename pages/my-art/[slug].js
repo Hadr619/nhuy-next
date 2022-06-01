@@ -1,13 +1,13 @@
 import { createClient} from 'contentful';
 import Image from "next/image";
 import Link from "next/link";
-import styles from './[slug].module.scss';
+import styles from './slug.module.scss';
 const client = createClient({
     space: process.env.CONTENTFUL_SPACE_ID,
     accessToken: process.env.CONTENTFUL_ACCESS_KEY,
   });
   
-  export const getStaticPaths = async () => {
+  export async function getStaticPaths() {
     const res = await client.getEntries({
       content_type: 'artwork'
     })
@@ -20,7 +20,7 @@ const client = createClient({
   
     return {
       paths,
-      fallback: true
+      fallback: false
     }
   }
   
@@ -29,36 +29,35 @@ const client = createClient({
        content_type: 'artwork',
        'fields.slug': params.slug
      })
-     const res = await client.getEntries({ content_type: 'artwork' })
   
      if(!items.length){
        return {
          redirect: {
            destination: '/',
            permanent: false
-         }
+         },
        }
      }
   
      return {
-       props: { post: items[0],
+       props: { art: items[0],
                  },
        revalidate: 1
      }
   }
 
-  export default function ArtWork(post) {
-      console.log(post.post.fields);
-      const {title, description, image, metaDescription} = post.post.fields;
+  export default function ArtWork({art}) {
+    console.log(art.fields);
+    const {title, description, image, metaDescription} = art.fields;
 
       return(
         <section className={styles.section}>
-        {/* <div className={styles.container}>
+        <div className={styles.container}>
             <Link href="/my-art "><a className="c-btn--back"><i className="material-icons">keyboard_backspace</i> Back to my art</a></Link>
             <div className={styles.artworkGrid}>
               <div className={styles.image}>
                 <Image 
-                  src={`https:${post.post.fields.image.fields.file.url}`}
+                  src={`https:${art.fields.image.fields.file.url}`}
                   layout="responsive"
                   width={image.fields.file.details.image.width}
                   height={image.fields.file.details.image.height}
@@ -74,7 +73,7 @@ const client = createClient({
                     <p> editions</p>
                 </div>
             </div>
-        </div> */}
+        </div>
     </section>
       )
   }
