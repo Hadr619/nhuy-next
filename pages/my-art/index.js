@@ -1,6 +1,8 @@
 import ArtImage from "../../components/ArtImage/ArtImage";
 import { createClient} from 'contentful';
+import Page from "../../components/Page/Page";
 import Masthead from "../../components/Masthead/Masthead";
+import Section from "../../components/Section/Section";
 import styles from "./myart.module.scss";
 
 export async function getStaticProps() {
@@ -21,14 +23,12 @@ export async function getStaticProps() {
 export default function myArt({artwork}) {
 
     return(
-        <>
+        <Page>
         <Masthead 
         title="My Art"
         description="What I Do."
         />
-        <section className={styles.section}>
-        <div className={styles.container}>
-
+        <Section>
             <ul className={styles.grid}>
                 {artwork.map(art => {
                     return (      
@@ -40,8 +40,7 @@ export default function myArt({artwork}) {
 
                         {/* <span className="u-none-added">Sorry, but there is currently no artork uploaded. Please check back.</span> */}
             </ul>
-        </div>
-    </section>
-    </>
+    </Section>
+    </Page>
     )
 }

@@ -2,6 +2,7 @@ import Masthead from "../components/Masthead/Masthead";
 import { createClient} from 'contentful';
 import LatestCreations from "../components/LatestCreations/LatestCreations";
 import Image from 'next/image'
+import Page from "../components/Page/Page";
 
 export async function getStaticProps() {
   const client = createClient({
@@ -22,14 +23,14 @@ return {
 export default function Home({artwork}) {
   // console.log(artwork)
   return (
-    <main className="page">
+    <Page>
       <Masthead 
         title="NhuyReid"
         description="Printmaker"
-        hazBtn={true}
         btnText="Contact Me"
+        fullHeight={true}
         />
         <LatestCreations artwork={artwork}/>
-    </main>
+    </Page>
   )
 }

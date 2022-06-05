@@ -1,8 +1,9 @@
 import Button from "../Button/Button";
 import { useRouter } from "next/router";
+import clsx from "clsx";
 import styles from "./Masthead.module.scss";
 
-export default function Masthead({title, description, hazBtn, btnText}) {
+export default function Masthead({title, description, btnText, fullHeight}) {
     const router = useRouter();
 
     const contactClick = () => {
@@ -10,12 +11,12 @@ export default function Masthead({title, description, hazBtn, btnText}) {
     }
 
     return (
-    <section className={styles.masthead}>
+    <section className={clsx(styles.masthead, fullHeight ? styles.fullHeight : "")}>
         <div className={styles.overlay}>
         <div className={styles.container}>
             <h1 className={styles.title}>{title}</h1>
             <h4 className={styles.subtitle}>{description}</h4>
-            {hazBtn ? <Button btnText={btnText} className={styles.btn} onClick={() => contactClick()}/> : ""}
+            {btnText ? <Button btnText={btnText} className={styles.btn} onClick={() => contactClick()}/> : ""}
         </div>
         </div>
     </section>

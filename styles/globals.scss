@@ -12,10 +12,4 @@ html{
     font-size: $defaultPx;
     font-family: var(--defaultFont);
 }
-.page{
-    margin-top:80px;
 
-    @include bp(medium){
-        margin-top:0;
-    }
-}

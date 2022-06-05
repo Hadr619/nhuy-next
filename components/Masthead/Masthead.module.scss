@@ -18,7 +18,12 @@ $navHeight: 95px;
     background-position: center center;
 
     @include bp(medium){
-        height:calc(100vh - #{$navHeight});
+        height:430px;
+    }
+    &.fullHeight{
+        @include bp(medium){
+            height:calc(100vh - #{$navHeight});
+        }
     }
 }
 .overlay{

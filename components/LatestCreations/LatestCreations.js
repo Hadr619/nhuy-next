@@ -15,7 +15,7 @@ export default function LastestCreations({artwork}) {
 
         <ul className={styles.latestGrid}> 
 
-    {artwork.map(art =>{
+    {artwork.map((art, index) =>{
         // console.log(art.fields.title)
         return(
             <li key={art.sys.id}>
@@ -28,6 +28,7 @@ export default function LastestCreations({artwork}) {
                             objectFit="cover"
                             className={styles.image}
                             alt={art.fields.title}
+                            priority={index === 0 ? true : false}
                         />                      
                     </div>
 
