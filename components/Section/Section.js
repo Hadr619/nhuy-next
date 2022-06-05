@@ -1,4 +1,4 @@
-import styles from "./Section.module.scss";
+import styles from "./SectionPage.module.scss";
 
 export default function Section({children}){
     return(
