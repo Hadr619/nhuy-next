@@ -1,4 +1,4 @@
-import styles from "./page.module.scss";
+import styles from "./Page.module.scss";
 export default function Page({children}) {
     return (
         <main className={styles.page}>
