@@ -10,7 +10,6 @@ export default function Contact() {
                 description="Thanks for reaching out."
                 />
             <Section>
-                <h1>Contact Me</h1>
                 <Formspree />
             </Section>
         </Page>

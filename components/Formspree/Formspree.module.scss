@@ -1,0 +1,54 @@
+@import 'tools/helpers';
+
+.form{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    width:100%;
+}
+.input{
+    min-height:70px;
+    font-size:20px;
+}
+.textarea{
+    min-height:170px;
+    resize:none;
+    font-size:18px;
+
+}
+.input,
+.textarea{
+    border:solid 3px $cornflowerBlue;
+    padding:15px 10px;
+}
+.field{
+    display:flex;
+    flex-direction:column;
+    flex:1 0 100%;
+
+    &:nth-child(-n+2){
+
+        @include bp(small){
+            flex-basis:calc((100% - 15px) / 2);
+        }
+    }
+    &:nth-child(2){
+        margin-top: 25px;
+        @include bp(small){
+            margin-top:0;
+            margin-left:15px;
+        }
+    }
+    &:nth-child(3){
+        margin-top:25px;
+    }
+    &:nth-child(-n+3) label{
+        margin-bottom:15px;
+        font-size:20px;
+
+    }
+
+}
+.btn{
+    margin-top:spacing(6);
+}
