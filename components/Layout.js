@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import ScrollToTop from "./ScrollToTop/ScrollToTop";
 export default function Layout({ children }) {
     return (
       <>
@@ -11,6 +12,7 @@ export default function Layout({ children }) {
        <Header />
           { children }
        <Footer />
+       <ScrollToTop smooth />
       </>
     )
   }

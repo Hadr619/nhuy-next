@@ -41,9 +41,7 @@
     }
 }
 .image{
-    background-size:cover;
-    background-repeat:no-repeat;
-    background-position: center center;
+    position:relative;
     height:500px;
 }
 .text{
@@ -52,7 +50,6 @@
     padding: 0 15px;
     @include font(roboto);
     color:$doveGray;
-    font-size:em(22.5);
     line-height: 1.7;
     text-align:center;
 

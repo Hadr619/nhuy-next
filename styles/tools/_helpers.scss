@@ -55,6 +55,14 @@
             @content
         }
 }
+$html-font-size: $defaultPx;
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
 @function spacing($numbers...) {
     $space: 5;
     $newList: ();
@@ -67,7 +75,7 @@
         @if $number == 0 {
           $number: $number * $space;
         } @else {
-          $number: $number * $space + px;
+          $number: rem($number * $space);
         }
       } @else if type-of($number) == string {
         $number: $number;
@@ -77,13 +85,7 @@
     @return $newList;
   }
 
-$html-font-size: $defaultPx;
-@function stripUnit($value) {
-    @return $value / ($value * 0 + 1);
-}
-@function rem($pxValue) {
-    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
-}
+
 
 @mixin textoverflow($l){
     display: -webkit-box;

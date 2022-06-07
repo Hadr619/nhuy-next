@@ -3,13 +3,10 @@
 
 
 .section{
-    @include bp(medium){
-        min-height:100vh;
-    }
-    padding-top:rem(50);
-    padding-bottom:rem(50);
+    padding: spacing(12,4);
 
     @include bp(medium){
+        min-height:100vh;
         padding-top:rem(100);
         padding-bottom:rem(100);
     }

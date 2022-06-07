@@ -9,13 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "@formspree/react": "^2.2.5",
     "clsx": "^1.1.1",
     "contentful": "^9.1.29",
     "next": "12.1.6",
     "react": "18.1.0",
     "react-dom": "18.1.0",
-    "sass": "^1.51.0"
+    "sass": "^1.51.0",
+    "smoothscroll-polyfill": "^0.4.4"
   },
   "devDependencies": {
     "eslint": "8.15.0",
