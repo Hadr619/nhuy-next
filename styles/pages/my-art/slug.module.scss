@@ -55,14 +55,19 @@
 }
 
 .title{
-    font-size: em(30);
+    font-size: rem(30);
     @include font(ptserif);
     text-transform: initial;
 }
 
 .description{
     margin-top:15px;
-    font-size:em(25);
+    font-size:rem(25);
     color:$doveGray;
     line-height:1.7;
+}
+.back{
+    display:flex;
+    align-items: center;
+    gap: spacing(0,1);
 }

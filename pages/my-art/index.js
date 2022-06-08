@@ -3,8 +3,8 @@ import { createClient} from 'contentful';
 import Page from "../../components/Page/Page";
 import Masthead from "../../components/Masthead/Masthead";
 import Section from "../../components/Section/Section";
-import styles from "./myart.module.scss";
-
+// import styles from "./myart.module.scss";
+import styles from "../../styles/pages/my-art/myart.module.scss";
 export async function getStaticProps() {
     const client = createClient({
       space: process.env.CONTENTFUL_SPACE_ID,
