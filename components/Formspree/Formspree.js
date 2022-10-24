@@ -56,9 +56,6 @@ export default function ContactForm() {
         errors={state.errors}
       />
       </div>
-      {/* <button type="submit" disabled={state.submitting}>
-        Submit
-      </button> */}
       <Button type="submit" disabled={state.submitting} btnText="Contact Me" className={styles.btn}/>
     </form>
   );
