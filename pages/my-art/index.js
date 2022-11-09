@@ -32,9 +32,9 @@ export default function myArt({artwork}) {
             <ul className={styles.grid}>
                 {artwork.map(art => {
                     return (      
-                         
-                        <ArtImage key={art.sys.id} art={art} link={art.fields.slug}/>
-                        
+                         <li key={art.sys.id}>
+                        <ArtImage art={art} link={art.fields.slug}/>
+                        </li>
                     )
                 })}
 

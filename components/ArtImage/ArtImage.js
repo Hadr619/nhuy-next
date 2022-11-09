@@ -5,7 +5,7 @@ import styles from "./ArtImage.module.scss";
 export default function ArtImage({link, art}) {
     return (
         // <Link href={`/artwork/${art.fields.slug}`}>
-        <li className={styles.item}>     
+        <div className={styles.item}>     
         <Link href={`/my-art/${link}`}>
             <a className={styles.link}>
                 
@@ -23,6 +23,6 @@ export default function ArtImage({link, art}) {
                     </div>
                 </a> 
         </Link>
-        </li>
+        </div>
     )
 }
