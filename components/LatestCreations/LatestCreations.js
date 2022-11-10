@@ -6,8 +6,6 @@ import styles from "./LatestCreations.module.scss";
 
 
 export default function LastestCreations({artwork}) {
-    // const {title} = artwork.fields;
-
     return (
 <section className={styles.latestwork}>
     <div className={styles.container}>

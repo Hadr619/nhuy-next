@@ -26,6 +26,7 @@
     grid-template-columns:repeat(auto-fill, minmax(300px, 1fr));
     grid-gap:25px;
     width:100%;
+    margin-top: spacing(4);
 }
 
 .item{

@@ -12,8 +12,7 @@ export async function getStaticProps() {
 const artwork = await client.getEntries({ content_type: 'artwork' })
 return {
   props: {
-    artwork: artwork.items,
-    
+    artwork: artwork.items.slice(0,3),
   },
   revalidate: 1
 }
@@ -21,7 +20,7 @@ return {
 }
 
 export default function Home({artwork}) {
-  // console.log(artwork)
+
   return (
     <Page>
       <Masthead 
