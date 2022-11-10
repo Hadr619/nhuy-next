@@ -15,19 +15,8 @@ export default function LastestCreations({artwork}) {
         <ul className={styles.latestGrid}> 
 
     {artwork.map((art, index) =>{
-        // console.log(art.fields.title)
         return(
             <li key={art.sys.id}>
-
-                        {/* <Image 
-                            src={`https:${art.fields.image.fields.file.url}`}
-                            layout="fill"
-                            objectFit="cover"
-                            className={styles.image}
-                            alt={art.fields.title}
-                            priority={index === 0 ? true : false}
-                        />                       */}
-
                     <ArtImage  art={art} link={art.fields.slug}/>
             </li>
         )
