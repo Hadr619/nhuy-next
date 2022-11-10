@@ -27,16 +27,26 @@
         color: #3c4a50;
         -webkit-transition: -webkit-transform 0.35s;
         transition: transform 0.35s;
-        -webkit-transform: translate3d(0,100%,0);
-        transform: translate3d(0,100%,0);
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+        
+        @include bp(medium){
+            -webkit-transform: translate3d(0,100%,0);
+            transform: translate3d(0,100%,0);
+        }
     }
 
     .title{
-        font-size:em(18);
+        font-size:rem(18);
         -webkit-transition: -webkit-transform 0.35s;
         transition: transform 0.35s;
+        -webkit-transform: translate3d(0,0,0);
+        transform: translate3d(0,0,0);
+
+        @include bp(medium){
         -webkit-transform: translate3d(0,200%,0);
-        transform: translate3d(0,200%,0);
+            transform: translate3d(0,200%,0);
+        }
     }
 
     .description{

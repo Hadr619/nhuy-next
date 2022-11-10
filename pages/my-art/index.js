@@ -3,7 +3,6 @@ import { createClient} from 'contentful';
 import Page from "../../components/Page/Page";
 import Masthead from "../../components/Masthead/Masthead";
 import Section from "../../components/Section/Section";
-// import styles from "./myart.module.scss";
 import styles from "../../styles/pages/my-art/myart.module.scss";
 import Filter from "../../components/Filter/Filter";
 import { useState } from "react";
