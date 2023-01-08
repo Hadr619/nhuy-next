@@ -55,6 +55,7 @@ export default function Filter({artwork, types, activeType, setActiveType, setFi
     const buttonClick = (type) => {
         setActiveType(type)
         setSelected(type);
+        setOpen(!open);
     }
     return (
         <motion.div 
@@ -77,7 +78,7 @@ export default function Filter({artwork, types, activeType, setActiveType, setFi
                             type: "spring",
                             bounce: 0,
                             duration: 0.7,
-                            delayChildren: 0.3,
+                            delayChildren: 0.2,
                             staggerChildren: 0.05
                           }
                         },
