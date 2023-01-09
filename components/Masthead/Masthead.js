@@ -15,7 +15,6 @@ export default function Masthead({title, description, btnText, fullHeight}) {
         <div className={styles.overlay}>
         <div className={styles.container}>
             <h1 className={styles.title}>{title}</h1>
-            <h4 className={styles.subtitle}>{description}</h4>
             {btnText ? <Button btnText={btnText} className={styles.btn} onClick={() => contactClick()}/> : ""}
         </div>
         </div>
