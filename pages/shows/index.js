@@ -26,8 +26,6 @@ export async function getStaticProps() {
   }
 
 export default function Shows({artshows}) {
-    console.log(artshows)
-
     return(
         <Page>
             <Masthead 
@@ -38,8 +36,9 @@ export default function Shows({artshows}) {
 <Section>
         <div className="o-cont c-pg-section__container">
             <ul className="c-grid_shows">
+                {
 
-                {artshows.map(show => {
+               artshows.length > 0 ? (artshows.map(show => {
                 const { title, slug, featuredImage, description, date, address, eventWebsite } = show.fields;
 
                 const months = {
@@ -88,9 +87,6 @@ export default function Shows({artshows}) {
                     return true
                 }
 
-                // console.log(parseDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-                // console.log(formatted);
-
                     return (
                         <li key={show.sys.id} className={styles.item}>
                         <div className={styles.image}>
@@ -116,10 +112,9 @@ export default function Shows({artshows}) {
                     </div>
                     </li>
                     )
-                })}
-
-
-                    {/* <span class="u-none-added">Sorry, but there are no shows currently added. Please check back.</span> */}
+                })) : "Sorry, but there are no shows currently added. Please check back at a later date."
+                
+                }
             </ul>
         </div>
 

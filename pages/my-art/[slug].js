@@ -50,7 +50,6 @@ const client = createClient({
   }
 
   export default function ArtWork({art}) {
-    // console.log(art.fields);
     if(!art){
       return <Skeleton />
      }else{
