@@ -6,6 +6,7 @@ import Section from "../../components/Section/Section";
 import styles from "../../styles/pages/my-art/myart.module.scss";
 import Filter from "../../components/Filter/Filter";
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 export async function getStaticProps() {
     const client = createClient({
       space: process.env.CONTENTFUL_SPACE_ID,
@@ -44,17 +45,18 @@ export default function myArt({artwork}) {
 				setFiltered={setFiltered}
 				className={styles.filter}
 				/>
-            <ul className={styles.grid}>
+            <motion.ul className={styles.grid}>
+			<AnimatePresence>
                 {filtered.map(art => {
                     return (      
-                        <li key={art.sys.id}>
+                        <motion.li key={art.sys.id} animate={{ opacity: 1 }} initial={{ opacity: 0 }} exit={{ opacity: 0 }} layout>
                           <ArtImage art={art} link={art.fields.slug}/>
-                        </li>
+                        </motion.li>
                     )
                 })}
-
+			</AnimatePresence>
                         {/* <span className="u-none-added">Sorry, but there is currently no artork uploaded. Please check back.</span> */}
-            </ul>
+            </motion.ul>
     </Section>
     </Page>
     )
