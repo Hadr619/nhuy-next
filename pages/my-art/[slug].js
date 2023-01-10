@@ -79,8 +79,6 @@ const client = createClient({
                       <h3 className={styles.title}>{title}</h3>
                       <p></p>      
                       <div className={styles.description}>{description}</div>
-                      <p></p>
-                      <p> editions</p>
                   </div>
               </div>
       </Section>
