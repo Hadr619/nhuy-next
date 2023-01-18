@@ -1,4 +1,5 @@
 import { createClient} from 'contentful';
+import { NextSeo } from 'next-seo';
 import Image from "next/image";
 import BackButton from "../../components/BackButton/BackButton";
 import Skeleton from "../../components/Skeleton/Skeleton";
@@ -53,10 +54,28 @@ const client = createClient({
     if(!art){
       return <Skeleton />
      }else{
-    const {title, description, image, metaDescription} = art.fields;
+    const {title, description, image, metaDescription, slug} = art.fields;
 
       return(
         <Page>
+      <NextSeo 
+      title={title}
+      description={``}
+      openGraph={{
+        type: 'website',
+        url: `https://www.nhuyreid.com/my-art/${slug}`,
+        title: `${title}`,
+        description: `${metaDescription}`,
+        images: [
+          {
+            url: `https:${image.fields.file.url}`,
+            width: `${image.fields.file.details.image.width}`,
+            height: `${image.fields.file.details.image.height}`,
+            alt: 'Artwork image',
+          },
+        ],
+      }}
+      />
           <Section>
 
               <BackButton

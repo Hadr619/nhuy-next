@@ -3,7 +3,7 @@ import clsx from "clsx";
 import {motion, Variants} from "framer-motion";
 import { VscTriangleDown } from "react-icons/vsc";
 import { MdCheckCircle } from "react-icons/md";
-import styles from "./Filter.module.scss"
+import styles from "./Filter.module.scss";
 const itemVariants = {
     open: {
       opacity: 1,
@@ -57,9 +57,11 @@ export default function Filter({artwork, types, activeType, setActiveType, setFi
         setSelected(type);
         setOpen(!open);
     }
+    console.log(types.length);
     return (
+
         <motion.div 
-            className={styles.wrapper} 
+            className={clsx(styles.wrapper, types.length === 1 ? styles.hide : "")}
             ref={containerRef}
             initial={false}
             animate={open ? "open" : 'closed'}>

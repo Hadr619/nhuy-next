@@ -1,4 +1,5 @@
 import { createClient} from 'contentful';
+import { NextSeo } from 'next-seo';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { format } from 'date-fns'
 import Link from "next/link";
@@ -34,8 +35,7 @@ export default function Shows({artshows}) {
             />
 
 <Section>
-        <div className="o-cont c-pg-section__container">
-            <ul className="c-grid_shows">
+            <ul className={styles.shows}>
                 {
 
                artshows.length > 0 ? (artshows.map(show => {
@@ -116,7 +116,6 @@ export default function Shows({artshows}) {
                 
                 }
             </ul>
-        </div>
 
     </Section>
         </Page>

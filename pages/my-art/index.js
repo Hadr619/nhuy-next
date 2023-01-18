@@ -1,5 +1,6 @@
 import ArtImage from "../../components/ArtImage/ArtImage";
 import { createClient} from 'contentful';
+import { NextSeo } from 'next-seo';
 import Page from "../../components/Page/Page";
 import Masthead from "../../components/Masthead/Masthead";
 import Section from "../../components/Section/Section";
@@ -33,6 +34,9 @@ export default function myArt({artwork}) {
 // console.log(filtered)
     return(
         <Page>
+      <NextSeo 
+      title="My Art"
+      />
         <Masthead 
         title="My Art"
         description="What I Do."

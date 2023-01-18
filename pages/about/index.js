@@ -1,3 +1,5 @@
+
+import { NextSeo } from 'next-seo';
 import Image from "next/image";
 import Page from "../../components/Page/Page";
 import { createClient} from 'contentful';
@@ -26,6 +28,9 @@ export default function About({about}) {
     console.log(aboutImage);
     return (
         <Page>
+        <NextSeo 
+          title="About Me"
+          />
         <Masthead 
             title="About Me"
             description="Who am I."

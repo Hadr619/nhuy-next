@@ -1,4 +1,5 @@
 import { createClient} from 'contentful';
+import { NextSeo } from 'next-seo';
 import Image from "next/image";
 import Link from "next/link";
 import Skeleton from "../../components/Skeleton/Skeleton";
@@ -59,7 +60,7 @@ const client = createClient({
     if(!artShow){
       return <Skeleton />
      }else{
-    const {title, slug, featuredImage, description, date, address, eventWebsite} = artShow.fields;
+    const {title, slug, featuredImage, metaDescription, description, date, address, eventWebsite} = artShow.fields;
     const months = {
       0: 'January',
       1: 'February',
@@ -105,6 +106,24 @@ const client = createClient({
     const formatted = `${dayName}, ${newDate} ${monthName} ${year} at ${time}`;
       return(
         <Page>
+                <NextSeo 
+      title={title}
+      description={``}
+      openGraph={{
+        type: 'website',
+        url: `https://www.nhuyreid.com/shows/${slug}`,
+        title: `${title}`,
+        description: `${metaDescription}`,
+        images: [
+          {
+            url: `https:${featuredImage.fields.file.url}`,
+            width: `${featuredImage.fields.file.details.image.width}`,
+            height: `${featuredImage.fields.file.details.image.height}`,
+            alt: 'Art Show image',
+          },
+        ],
+      }}
+      />
           <Section>
             
           <BackButton 

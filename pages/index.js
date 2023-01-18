@@ -1,3 +1,4 @@
+import { NextSeo } from 'next-seo';
 import Masthead from "../components/Masthead/Masthead";
 import { createClient} from 'contentful';
 import LatestCreations from "../components/LatestCreations/LatestCreations";
@@ -23,6 +24,9 @@ export default function Home({artwork}) {
 
   return (
     <Page>
+      <NextSeo
+        title="Home"
+        />
       <Masthead 
         title="NhuyReid"
         description="Printmaker"
