@@ -10,11 +10,20 @@ export default function Masthead({title, description, btnText, fullHeight}) {
         router.push('/contact');
     }
 
+    const words = title.split(' ');
+
     return (
     <section className={clsx(styles.masthead, fullHeight ? styles.fullHeight : "")}>
         <div className={styles.overlay}>
         <div className={styles.container}>
-            <h1 className={styles.title}>{title}</h1>
+            <h1 className={styles.title}>{
+                words.map((word, index) => {
+                    return (
+                        <span key={index}>{word}</span>
+                    )
+                })
+            }</h1>
+            <h2 className={styles.subtitle}>{description}</h2>
             {btnText ? <Button btnText={btnText} className={styles.btn} onClick={() => contactClick()}/> : ""}
         </div>
         </div>

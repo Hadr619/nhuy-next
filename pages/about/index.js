@@ -33,7 +33,7 @@ export default function About({about}) {
           />
         <Masthead 
             title="About Me"
-            description="Who am I."
+            description="Who I am"
          />
         <section className={styles.section}>
             <div className={styles.container}>

@@ -97,7 +97,7 @@
     }
 
     @include bp(medium){
-        &:not(.navHome){
+        &:not(.navHome, .instagram){
             .navLink{
                 &:hover,
                 &:active,
@@ -119,6 +119,21 @@
             &:not(.navHome){
                 margin-top:0;
             }
+        }
+    }
+
+    &.instagram {   
+        transition: transform .25s ease-in-out;
+        .navLink {
+            font-size: rem(35);
+        }
+        @include bp(medium){
+            position: absolute;
+            right: 0;  
+        }
+        &:hover {
+            transform: scale(1.3);
+            transition: transform .25s ease-in-out;
         }
     }
 }
@@ -155,7 +170,7 @@
     
     
             @include hover(){
-                background-color:darken($white, 5);
+                background-color:darken($white, 15);
             }
         }
     

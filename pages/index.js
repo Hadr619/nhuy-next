@@ -28,7 +28,7 @@ export default function Home({artwork}) {
         title="Home"
         />
       <Masthead 
-        title="NhuyReid"
+        title="Nhuy Reid"
         description="Printmaker"
         btnText="Contact Me"
         fullHeight={true}

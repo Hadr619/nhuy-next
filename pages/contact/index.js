@@ -11,7 +11,7 @@ export default function Contact() {
                 />
             <Masthead
                 title="Contact Me"
-                description="Thanks for reaching out."
+                description="Thanks for reaching out"
                 />
             <Section>
                 <Formspree />

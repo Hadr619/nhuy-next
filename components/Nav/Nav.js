@@ -2,6 +2,7 @@ import { useState } from "react";
 import Link from 'next/link';
 import { useRouter } from "next/router";
 import styles from './Nav.module.scss';
+import { FaInstagram } from "react-icons/fa"; 
 import clsx from 'clsx';
 
 
@@ -37,6 +38,7 @@ export default function Nav() {
                 </li>
                 <li className={clsx(pathCheck('/shows'), styles.navItem)}><Link href="/shows"><a onClick={() => handleNav(true)} className={styles.navLink}>Shows</a></Link></li>
                 <li className={clsx(pathCheck('/contact'), styles.navItem)}><Link href="/contact"><a onClick={() => handleNav(true)} className={styles.navLink}>Contact</a></Link></li>
+                <li className={clsx(styles.navItem, styles.instagram)}><Link href="https://www.instagram.com/nhuyreid"><a onClick={() => handleNav(true)} className={styles.navLink}><FaInstagram /></a></Link></li>
             </ul>
         </nav>
     )

@@ -44,6 +44,8 @@ $navHeight: 95px;
 }
 
 .title{
+    display: flex;
+    gap: spacing(4);
     font-size: rem(32);
     font-family: $cornerstone;
     color:$white;
