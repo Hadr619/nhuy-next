@@ -39,7 +39,7 @@ export default function myArt({artwork}) {
       />
         <Masthead 
         title="My Art"
-        description="What I Do"
+        description="What I do"
         />
         <Section>
 			<Filter artwork={artwork} 
