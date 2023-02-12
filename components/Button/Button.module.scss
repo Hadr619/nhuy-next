@@ -25,10 +25,10 @@
     }
 
     &.primary{
-        background-color:$mariner;
+        background-color:$buttonColor;
 
         @include hover(){
-            background-color: color.scale($mariner,$lightness: -10%);
+            background-color: color.scale($buttonColor,$lightness: -45%);
         }
     }
 }

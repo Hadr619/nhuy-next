@@ -3,6 +3,6 @@ import clsx from "clsx";
 
 export default function Button({className, btnText, ...props}) {
     return (
-        <button className={clsx(styles.button, styles.primary, className)} {...props}>{btnText}</button>
+        <button className={clsx(styles.button, styles.primary, className)} {...props} type="button">{btnText}</button>
     )
 }

@@ -21,7 +21,7 @@ export default function Nav() {
         html.classList.toggle('active');
     }
     return (
-        <nav className={clsx(styles.topnav, open ? styles.open : '')}>
+        <nav className={clsx(styles.topnav, open ? styles.open : '')} role="navigation">
             <div className={styles.container}>
                 <svg className={clsx(styles.bars, open ? styles.active : '')} onClick={() => handleNav() } viewBox="0 0 100 100">
                     <path className={clsx(styles.line, styles.top)} d="m 30,33 h 40 c 13.100415,0 14.380204,31.80258 6.899646,33.421777 -24.612039,5.327373 9.016154,-52.337577 -12.75751,-30.563913 l -28.284272,28.284272"></path>
@@ -34,11 +34,11 @@ export default function Nav() {
                 <li className={clsx(pathCheck('/about'), styles.navItem)}><Link href="/about"><a onClick={() => handleNav(true)} className={styles.navLink}>About</a></Link></li>
                 <li className={clsx(pathCheck('/my-art'), styles.navItem)}><Link href="/my-art"><a onClick={() => handleNav(true)} className={styles.navLink}>My Art</a></Link></li>
                 <li className={clsx(styles.navItem, styles.navHome)}>
-                    <Link href="/"><a onClick={() => handleNav(true)} className={clsx(styles.navLink, styles.navItemHome)}><span className={styles.navHomeText}>Home</span></a></Link>
+                    <Link href="/"><a onClick={() => handleNav(true)} className={clsx(styles.navLink, styles.navItemHome)} aria-label="Click back to home page"><span className={styles.navHomeText}>Home</span></a></Link>
                 </li>
                 <li className={clsx(pathCheck('/shows'), styles.navItem)}><Link href="/shows"><a onClick={() => handleNav(true)} className={styles.navLink}>Shows</a></Link></li>
                 <li className={clsx(pathCheck('/contact'), styles.navItem)}><Link href="/contact"><a onClick={() => handleNav(true)} className={styles.navLink}>Contact</a></Link></li>
-                <li className={clsx(styles.navItem, styles.instagram)}><Link href="https://www.instagram.com/nhuyreid"><a onClick={() => handleNav(true)} className={styles.navLink}><FaInstagram /></a></Link></li>
+                <li className={clsx(styles.navItem, styles.instagram)}><Link href="https://www.instagram.com/nhuyreid"><a onClick={() => handleNav(true)} className={styles.navLink} aria-label="See my Instagram account"><FaInstagram /></a></Link></li>
             </ul>
         </nav>
     )
