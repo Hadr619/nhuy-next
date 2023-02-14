@@ -36,6 +36,7 @@ export default function myArt({artwork}) {
         <Page>
       <NextSeo 
       title="My Art"
+      descritpion="A list of my artwork"
       />
         <Masthead 
         title="My Art"

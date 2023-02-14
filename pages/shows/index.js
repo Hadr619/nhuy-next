@@ -29,6 +29,9 @@ export async function getStaticProps() {
 export default function Shows({artshows}) {
     return(
         <Page>
+        <NextSeo 
+        title="Art Shows"
+        description="A list of art shows, past and future" />
             <Masthead 
                 title="Art Shows"
                 description="Where you can see my art"

@@ -9,8 +9,8 @@ export default function LastestCreations({artwork}) {
     return (
 <section className={styles.latestwork}>
     <div className={styles.container}>
-        <h4 className={styles.header}>Latest Creations</h4>
-        <h5 className={styles.title}>A Collection of Prints</h5>
+        <h3 className={styles.header}>Latest Creations</h3>
+        <h4 className={styles.title}>A Collection of Prints</h4>
 
         <ul className={styles.latestGrid}> 
 

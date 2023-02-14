@@ -30,6 +30,7 @@ export default function About({about}) {
         <Page>
         <NextSeo 
           title="About Me"
+          description="Some information about me"
           />
         <Masthead 
             title="About Me"

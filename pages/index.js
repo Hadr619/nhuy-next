@@ -26,6 +26,7 @@ export default function Home({artwork}) {
     <Page>
       <NextSeo
         title="Home"
+        description="Nhuy Reid Home"
         />
       <Masthead 
         title="Nhuy Reid"

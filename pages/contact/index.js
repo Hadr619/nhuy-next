@@ -8,6 +8,7 @@ export default function Contact() {
         <Page>
             <NextSeo
                 title="Contact Me"
+                description="Contact me form"
                 />
             <Masthead
                 title="Contact Me"
