@@ -1,0 +1,110 @@
+@import "variables";
+
+@mixin constrain() {
+    width: 100%;
+    max-width: 100%;
+    margin-right: auto;
+    margin-left:  auto;
+    @include bp(small) {
+        width: 750px;
+    }
+
+    @include bp(medium) {
+        width: 950px;
+    }
+
+    @include bp(large) {
+        width: 1170px;
+    }
+}
+
+// BREAKPOINTS
+@mixin bp($point) {
+    @if $point == large {
+        @media (min-width: 1200px) {
+            @content;
+        }
+    }
+    @else if $point == medium {
+        @media (min-width: 992px) {
+            @content;
+        }
+    }
+    @else if $point == small {
+        @media (min-width: 768px) {
+            @content;
+        }
+    }
+    @else if $point == xsmall {
+        @media (min-width: 546px) {
+            @content;
+        }
+    }
+    @else {
+        @media (min-width: #{$point}){
+            @content;
+        }
+    }
+}
+
+// Hover mixin adds hover pseudo elements
+@mixin hover(){
+        &:hover,
+        &:active,
+        &:focus{
+            @content
+        }
+}
+$html-font-size: $defaultPx;
+@function stripUnit($value) {
+    @return $value / ($value * 0 + 1);
+}
+@function rem($pxValue) {
+    @return #{stripUnit($pxValue) / stripUnit($html-font-size)}rem;
+}
+
+@function spacing($numbers...) {
+    $space: 5;
+    $newList: ();
+  
+    @if length($numbers) == 0 {
+      $newList: append($newList, $space);
+    }
+    @each $number in $numbers {
+      @if type-of($number) == number {
+        @if $number == 0 {
+          $number: $number * $space;
+        } @else {
+          $number: rem($number * $space);
+        }
+      } @else if type-of($number) == string {
+        $number: $number;
+      }
+      $newList: append($newList, $number);
+    }
+    @return $newList;
+  }
+
+
+
+@mixin textoverflow($l){
+    display: -webkit-box;
+    -webkit-line-clamp: $l;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+@mixin font($f){
+    @if $f == roboto{
+        font-family:$roboto;
+    }
+    @else if $f == ptserif{
+        font-family:$ptSerif;
+    }
+    @else if $f == cornerstone{
+        font-family:$cornerstone;
+    }
+    @else {
+        @error "Not a font in my aresenal sir";
+    }
+}

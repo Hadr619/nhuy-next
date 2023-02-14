@@ -1,0 +1,216 @@
+@import "tools/helpers";
+@import "tools/variables";
+
+.topnav{
+    display:flex;
+    flex-direction:column;
+    align-items: center;
+    position:fixed;
+    top:80px;
+    left:-100%;
+    width:100%;
+    height: 100%;
+    padding-top:10%;
+    background-color: rgba($white, .95);
+    transition:left .25s ease-in-out;
+    z-index:100;
+
+    &.active{
+        left:0;
+    }
+    
+    @include bp(medium){
+        position:static;
+        flex-direction:row;
+        justify-content: center;
+        height:95px;
+        padding-top:0;
+        background-color:$white;
+    }
+}
+
+.container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    box-shadow: 2px 4px 10px rgba(0,0,0,.2);
+    display: grid;
+    grid-template-columns: 1fr repeat(3, auto) 1fr;
+    grid-column-gap: 5px;
+    background-color:$white;
+    z-index:101;
+    @include bp(medium){
+      display:none;
+    }
+}
+.logo{
+    width: 65px;
+    height: 65px;
+    background: red;
+    align-self: center;
+    border-radius:50%;
+    background-image:url('/nhuyreid-logo.svg');
+    background-color: $white; 
+    background-repeat:no-repeat;
+    background-size: 70%;
+    background-position: center center;
+    box-shadow: 0 20px 40px 0 rgba(0,0,0,0.1);
+  
+  }
+  .logoLink{
+    display:block;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+  }
+
+  .navItem{
+    &.active{
+        .navLink{
+            border-color: #0A0B09;
+            background-color: #BB2224;
+            color:$white;
+        }
+    }
+    .navLink{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding:11px 30px;
+        background-color:transparent;
+        border-width:3px;
+        border-style:solid;
+        border-color:transparent;
+        border-radius: 21px;
+        font-size:30px;
+        text-decoration: none;
+        font-family: 'cornerstoneregular';
+        color:$black;
+        transition: all .25s ease-in-out;
+
+
+
+        @include bp(medium){
+            font-size:20px;
+        }
+    }
+
+    @include bp(medium){
+        &:not(.navHome, .instagram){
+            .navLink{
+                &:hover,
+                &:active,
+                &:focus{
+                    border-color: #0A0B09;
+                    background-color: #BB2224;
+                    color:$white;
+                    transition: all .25s ease-in-out;
+    
+                }
+            }
+        }
+    }
+
+    & + .navItem{
+        margin-top:10px;
+
+        @include bp(medium){
+            &:not(.navHome){
+                margin-top:0;
+            }
+        }
+    }
+
+    &.instagram {   
+        transition: transform .25s ease-in-out;
+        .navLink {
+            font-size: rem(35);
+        }
+        @include bp(medium){
+            position: absolute;
+            right: 0;  
+        }
+        &:hover,
+        &:active,
+        &:focus {
+            transform: scale(1.3);
+            transition: transform .25s ease-in-out;
+        }
+    }
+}
+
+.navHome{
+    display:none;
+    @include bp(medium){
+        display:block;
+        width:150px;
+        height:150px;
+        order:0;
+        border-radius:50%;
+        background-color:$white;
+        box-shadow: 0px 3px 3px -2px rgb(0 0 0 / 20%), 0px 3px 4px 0px rgb(0 0 0 / 14%), 0px 1px 8px 0px rgb(0 0 0 / 12%);
+        z-index:1;
+
+        &.navItem{
+            margin-top: 95px;
+        }
+    }
+
+    .navItemHome{
+        @include bp(medium){
+            display:block;
+            width: 150px;
+            height:150px;
+            border-radius:50%;
+            background-image:url('/nhuyreid-logo.svg');
+            background-color: $white; 
+            background-repeat:no-repeat;
+            background-size: 70%;
+            background-position: center 15px;
+            transition: background-color .25s ease-in-out;
+    
+    
+            &:hover{
+                background-color:darken($white, 15);
+            }
+        }
+    
+        .navHomeText{
+            @include bp(medium){
+                display:none;
+            }
+        }
+    }
+
+}
+
+.bars {
+    width: 80px;
+    cursor: pointer;
+  }
+  .bars .line {
+    fill: none;
+    stroke: #333;
+    stroke-width: 4;
+    stroke-linecap: square;
+    transition: stroke-dasharray 400ms,  stroke-dashoffset 400ms;
+  }
+  .bars .line.top {
+    stroke-dasharray: 40 172;
+  }
+  .bars .line.middle {
+    stroke-dasharray: 40 111;
+  }
+  .bars .line.bottom {
+    stroke-dasharray: 40 172;
+  }
+  .bars.active .top {
+    stroke-dashoffset: -132px;
+  }
+  .bars.active .middle {
+    stroke-dashoffset: -71px;
+  }
+  .bars.active .bottom {
+    stroke-dashoffset: -132px;
+  }

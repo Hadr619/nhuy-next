@@ -1,0 +1,68 @@
+@use "sass:color";
+@import "../../styles/tools/helpers";
+
+.wrapper{
+    align-self: flex-start;
+    position:relative;
+    z-index: 2;
+    // filter: drop-shadow(0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%));
+    filter: drop-shadow(-1px 5px 3px rgba(50,50,0,0.3));
+
+}
+.button {
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+    background-color: $white;
+    border: solid 1px #ddd;
+    padding: spacing(1,2);
+    border-radius: spacing(1);
+    cursor: pointer;
+    transition: background-color .25s ease-in-out;
+
+    &:hover{
+        background-color: color.scale(#fff, $lightness: -15%);
+        transition: background-color .25s ease-in-out;
+    }
+}
+.icon {
+    transition: transform .25s ease-in-out;
+}
+.list{
+    opacity: 0;
+    visibility: hidden;
+    width: 250px;
+    max-height: 300px;
+    background-color: #fff;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    padding: rem(16);
+    position:absolute;
+    top:100%;
+    left:0;
+    border-radius: spacing(1);
+}
+.listItem{
+    display: flex;
+    align-items: center;
+    padding: spacing(1,0);
+    cursor: pointer;
+}
+.checkIcon{
+    display:flex;
+    flex-basis: 10%;
+    color: $mariner;
+}
+.open {
+    opacity: 1;
+    visibility: visible;
+}
+.rotate{
+    transform: rotate(180deg);
+    transition: transform .25s ease-in-out;
+}
+.visibleType{
+    min-width: 65px;
+}
+.hide {
+    display:none;
+}

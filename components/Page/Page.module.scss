@@ -1,0 +1,8 @@
+@import "tools/helpers";
+.page{
+    margin-top:80px;
+
+    @include bp(medium){
+        margin-top:0;
+    }
+}
