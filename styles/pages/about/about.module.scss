@@ -66,12 +66,16 @@
     }
 
     .inner{
+        text-align: left;
+
         @include bp(medium){
             position:absolute;
             top:50%;
             left:0;
             transform:translateY(-50%);
             padding:0;
+            
+
         }
     }
 
