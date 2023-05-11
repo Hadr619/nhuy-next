@@ -6,6 +6,10 @@
 :root{
     --primaryColor: #{meta.inspect($buttonColor)};
     --defaultFont: #{meta.inspect($roboto)};
+    --color-white: #fff;
+    --color-purple: #340D6A;
+    --color-yellow: #f2ce3f;
+    --color-black: #333;
 }
 
 html{
@@ -14,6 +18,40 @@ html{
     line-height:1.5;
 }
 
+body,
+body[data-theme="light"] {
+  --color-text-primary: var(--color-black);
+  --color-text-secondary: #6d727c;
+  --color-bg-primary: #fff;
+  --color-bg-card:var(--color-bg-primary);
+  --color-bg-nav: rgb(255,255,255, .95);
+  --color-bg-scroll: var(--color-bg-primary);
+  --color-bg-pill: var(--color-purple);
+  --color-text-pill: var(--color-bg-primary);
+  --color-fill-moon: var(--color-black);
+  --color-fill-lines: var(--color-black);
+  --color-bg-dropdown: var(--color-bg-card);
+  --color-bg-dropdown-btn: var(--color-bg-primary);
+  --color-border: #ddd;
+} 
+
+body[data-theme="dark"] {
+  --color-text-primary: #e3e3e3;
+  --color-text-secondary: #95acc5;
+  --color-bg-primary: hsl(215 33% 13%);
+  --color-bg-light:hsl(215 33% 18%);
+  --color-bg-lighter: hsl(215 33% 24%);
+  --color-bg-card: var(--color-bg-light);
+  --color-bg-nav: rgb(0,0,0, .95);
+  --color-bg-scroll: var(--color-bg-lighter);
+  --color-bg-pill: var(--color-white);
+  --color-text-pill: var(--color-bg-primary);
+  --color-fill-moon: var(--color-white);
+  --color-fill-lines: var(--color-white);
+  --color-bg-dropdown: var(--color-bg-lighter);
+  --color-bg-dropdown-btn: var(--color-bg-lighter);
+  --color-border:var(--color-bg-light);
+}
 h1{
     font-size: 2.5rem;
 }
