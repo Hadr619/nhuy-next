@@ -55,7 +55,7 @@
     font-family:$cornerstone;
     font-size:15px;
     text-decoration:none;
-    color:$rangoonGreen;
+    color:var(--color-text-primary);
 
     @include bp(medium){
         font-size:25px;

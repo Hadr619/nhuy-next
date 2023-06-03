@@ -19,7 +19,7 @@ $navHeight: 95px;
     }
     &.fullHeight{
         @include bp(medium){
-            height:calc(100vh - #{$navHeight});
+            height:calc(75vh - #{$navHeight});
         }
     }
 }

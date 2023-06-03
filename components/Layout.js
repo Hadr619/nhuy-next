@@ -8,6 +8,7 @@ export default function Layout({ children }) {
         <Head>
           <meta name="msapplication-TileColor" content="#ffc40d" />
           <meta name="theme-color" content="#ffffff" />
+          {/* <link rel="icon" href="/icon.svg" type="image/svg" sizes="96x96" /> */}
        </Head>
        <Header />
           { children }

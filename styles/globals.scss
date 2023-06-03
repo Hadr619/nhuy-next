@@ -1,4 +1,5 @@
 @use "sass:meta";
+@use "sass:color";
 @import "tools/reset";
 @import "tools/fonts";
 @import "tools/helpers";
@@ -6,10 +7,16 @@
 :root{
     --primaryColor: #{meta.inspect($buttonColor)};
     --defaultFont: #{meta.inspect($roboto)};
-    --color-white: #fff;
+    --color-white: #f0f6fc;
     --color-purple: #340D6A;
     --color-yellow: #f2ce3f;
     --color-black: #333;
+    --color-red: #CC0000;
+    --color-700: #3E4C59;
+    --color-900: #1F2933;
+    --color-river-styx: #161b22;
+    --color-black-is-back:#0d1117;
+    --color-simply-blue: #adbac7;
 }
 
 html{
@@ -20,12 +27,16 @@ html{
 
 body,
 body[data-theme="light"] {
+  --color-bg-body: var(--color-white);
   --color-text-primary: var(--color-black);
-  --color-text-secondary: #6d727c;
   --color-bg-primary: #fff;
+  --color-bg-logo: var(--color-white);
+  --color-bg-logo-hover: #{meta.inspect(color.scale($white, $lightness: -15%))};
   --color-bg-card:var(--color-bg-primary);
   --color-bg-nav: rgb(255,255,255, .95);
+  --color-bg-topnav: var(--color-white);
   --color-bg-scroll: var(--color-bg-primary);
+  --color-fill-heart: var(--color-red);
   --color-bg-pill: var(--color-purple);
   --color-text-pill: var(--color-bg-primary);
   --color-fill-moon: var(--color-black);
@@ -36,21 +47,30 @@ body[data-theme="light"] {
 } 
 
 body[data-theme="dark"] {
-  --color-text-primary: #e3e3e3;
-  --color-text-secondary: #95acc5;
+  --color-bg-body: var(--color-black-is-back);
+  --color-text-primary: #adbac7;
   --color-bg-primary: hsl(215 33% 13%);
   --color-bg-light:hsl(215 33% 18%);
   --color-bg-lighter: hsl(215 33% 24%);
+  --color-bg-logo: var(--color-river-styx);
+  --color-bg-logo-hover: #{meta.inspect(color.scale(#161b22, $lightness: 5%))};
   --color-bg-card: var(--color-bg-light);
-  --color-bg-nav: rgb(0,0,0, .95);
+  --color-bg-card-title: #{meta.inspect(color.scale(#0d1117, $lightness: 5%))};
+  --color-bg-nav: #{meta.inspect(rgb($backInBlack, .95))};
+  --color-bg-topnav:var(--color-river-styx);
   --color-bg-scroll: var(--color-bg-lighter);
   --color-bg-pill: var(--color-white);
+  --color-fill-heart: var(--color-white);
   --color-text-pill: var(--color-bg-primary);
-  --color-fill-moon: var(--color-white);
+  --color-fill-moon: var(--color-simply-blue);
   --color-fill-lines: var(--color-white);
   --color-bg-dropdown: var(--color-bg-lighter);
   --color-bg-dropdown-btn: var(--color-bg-lighter);
   --color-border:var(--color-bg-light);
+}
+body {
+    background: var(--color-bg-body);
+    color: var(--color-text-primary);
 }
 h1{
     font-size: 2.5rem;
@@ -69,4 +89,7 @@ h5{
 }
 h5{
     font-size:1rem;
+}
+a, p {
+    color: var(--color-text-primary);
 }
