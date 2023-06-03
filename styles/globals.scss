@@ -33,6 +33,7 @@ body[data-theme="light"] {
   --color-bg-logo: var(--color-white);
   --color-bg-logo-hover: #{meta.inspect(color.scale($white, $lightness: -15%))};
   --color-bg-card:var(--color-bg-primary);
+  --color-bg-card-title: var(--color-white);
   --color-bg-nav: rgb(255,255,255, .95);
   --color-bg-topnav: var(--color-white);
   --color-bg-scroll: var(--color-bg-primary);
