@@ -1,0 +1,17 @@
+@import "../../styles/tools/helpers";
+.svg {
+    width: 90%;
+}
+.heart {
+    fill: var(--color-fill-heart);
+}
+.lines{
+    fill: var(--color-fill-lines);
+}
+
+.name {
+    display:none;
+    @include bp(medium) {
+        display: block;
+    }
+}

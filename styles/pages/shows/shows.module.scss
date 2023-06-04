@@ -43,7 +43,7 @@
 }
 .dateLocation{
     display:flex;
-    color:$black;
+    color:var(--color-text-primary);
     font-size:rem(22);
     font-family:$ptSerif;   
     & + &{

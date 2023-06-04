@@ -5,4 +5,8 @@
     align-items: center;
     gap: spacing(0,1);
     align-self: flex-start;
+
+    svg {
+        fill: var(--color-text-primary);
+    }
 }
