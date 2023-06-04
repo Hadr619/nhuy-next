@@ -25,10 +25,10 @@
     }
 
     &.primary{
-        background-color:$buttonColor;
+        background-color:var(--color-bg-button);
 
         @include hover(){
-            background-color: color.scale($buttonColor,$lightness: -45%);
+            background-color: var(--color-bg-button-hover);
         }
     }
 }

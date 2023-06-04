@@ -61,7 +61,7 @@
     &.active{
         .navLink{
             border-color: #0A0B09;
-            background-color: #BB2224;
+            background-color: var(--color-bg-nav-item);
             color:$white;
         }
     }

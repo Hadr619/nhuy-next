@@ -3,7 +3,7 @@
   display:flex;
   justify-content: center;
   align-items: center;
-  background-color: $white;
+  background-color: var(--color-bg-scroll);
   right: 40px;
   bottom: 40px;
   position: fixed;

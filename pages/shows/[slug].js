@@ -56,7 +56,7 @@ const client = createClient({
   }
 
   export default function Art({artShow}) {
-    // console.log(artShow.fields);
+
     if(!artShow){
       return <Skeleton />
      }else{
@@ -95,6 +95,9 @@ const client = createClient({
               <img src={`https:${fields.file.url}`} height={`${fields.file.details.image.height}`} width={`${fields.file.details.image.width}`} alt={`${fields.description}`}/>,
       },
   };
+    const openSite = () => {
+      window.open(eventWebsite, '_blank');
+    }
     const dateParse = Date.parse(date);
     const parseDate = new Date(dateParse);
     const monthName = months[parseDate.getMonth()];
@@ -136,6 +139,7 @@ const client = createClient({
                 <Image 
                     src={`https:${featuredImage.fields.file.url}`}
                     layout="responsive"
+                    priority={true}
                     width={featuredImage.fields.file.details.image.width}
                     height={featuredImage.fields.file.details.image.height}
                     className={styles.image}
@@ -149,7 +153,7 @@ const client = createClient({
                         { eventWebsite ?(
                         // <a href="" target="_blank" className="c-btn c-btn--primary c-si-text--btn">Visit Event's Website</a>
                         <Button className={styles.btn}
-                                btnText="Visit Event's Website"/>
+                                btnText="Visit Event's Website" onClick={openSite} />
                         ) : ""}
                 </div>
             </div>
